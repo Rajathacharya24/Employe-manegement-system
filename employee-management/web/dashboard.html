@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Employee Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>EmpManagePro</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link active">Dashboard Overview</a>
+                <a href="viewEmployees.html" class="nav-link">View Employees</a>
+                <a href="addEmployee.html" class="nav-link">Add Employee</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <h1>Dashboard</h1>
+                <div class="user-profile">
+                    <span style="font-weight: 500;">Admin User</span>
+                    <a href="../LogoutServlet" class="logout-btn">Logout</a>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div style="text-align: center; padding: 40px;">
+                    <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-main);">Welcome to System
+                        Dashboard</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Manage your organization's workforce
+                        efficiently and securely.</p>
+                    <div style="display: flex; justify-content: center; gap: 16px;">
+                        <a href="addEmployee.html" class="btn-primary"
+                            style="text-decoration: none; width: auto; display: inline-block;">+ Add New Employee</a>
+                        <a href="viewEmployees.html" class="btn-primary"
+                            style="background: white; color: var(--primary); border: 1px solid var(--primary); text-decoration: none; width: auto; display: inline-block;">View
+                            All Employees</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Employee Management System</title>
+    <meta name="description" content="Login to manage employee records securely">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <h1>Welcome Back</h1>
+            <p>Admin Login to manage employees</p>
+            
+            <form id="loginForm" action="../LoginServlet" method="POST" onsubmit="return validateLogin()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username">
+                    <div id="usernameError" class="error-msg">Username is required</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password">
+                    <div id="passwordError" class="error-msg">Password is required</div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Sign In</button>
+                <div id="formMessage" style="margin-top: 12px; font-size: 14px; text-align: center;"></div>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        const msgEl = document.getElementById('formMessage');
+
+        if (error === 'invalid_credentials') {
+            msgEl.style.color = 'var(--danger)';
+            msgEl.innerText = 'Invalid username or password.';
+        } else if (error === 'db') {
+            msgEl.style.color = 'var(--danger)';
+            msgEl.innerText = 'Database connection failed. Please check server logs.';
+        }
+    </script>
+</body>
+</html>
